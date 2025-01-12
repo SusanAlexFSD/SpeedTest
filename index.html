@@ -8,45 +8,48 @@
 </head>
 <body>
   <div class="container">
-    <h1>Typing Test</h1>
+    <!-- Top Section (buttons & dropdowns) -->
+    <div class="top-section">
+      <h1>Typing Test</h1>
+      <div class="dropdowns">
+        <div class="dropdown">
+          <label for="test-time">Test Time:</label>
+          <select id="test-time">
+            <option value="30">30 Seconds</option>
+            <option value="60">1 Minute</option>
+            <option value="120">2 Minutes</option>
+            <option value="180">3 Minutes</option>
+            <option value="300">5 Minutes</option>
+            <option value="600">10 Minutes</option>
+          </select>
+        </div>
 
-    <div class="dropdowns">
-      <div class="dropdown">
-        <label for="test-time">Test Time:</label>
-        <select id="test-time">
-          <option value="30">30 Seconds</option>
-          <option value="60">1 Minute</option>
-          <option value="120">2 Minutes</option>
-          <option value="180">3 Minutes</option>
-          <option value="300">5 Minutes</option>
-          <option value="600">10 Minutes</option>
-        </select>
-      </div>
-
-      <div class="dropdown">
-        <label for="test-level">Test Level:</label>
-        <select id="test-level">
-          <option value="easy">Easy Text</option>
-          <option value="medium">Medium Text</option>
-          <option value="hard">Hard Text</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="buttons">
-      <button id="start-test-button">Start Test</button>
-      <button id="typing-lessons-button">Typing Lessons</button>
-    </div>
-
-    <div id="test-area" style="display: none;">
-        <div id="sentences-container"></div>
-        <div class="results">
-          <p>Time Left: <span id="time-left">0</span> seconds</p>
-          <p>Words Per Minute: <span id="wpm">0</span></p>
-          <p>Accuracy: <span id="accuracy">0</span>%</p>
+        <div class="dropdown">
+          <label for="test-level">Test Level:</label>
+          <select id="test-level">
+            <option value="easy">Easy Text</option>
+            <option value="medium">Medium Text</option>
+            <option value="hard">Hard Text</option>
+          </select>
         </div>
       </div>
-      
+
+      <div class="buttons">
+        <button id="start-test-button">Start Test</button>
+        <button id="typing-lessons-button">Typing Lessons</button>
+      </div>
+    </div>
+
+    <!-- Typing Test Section -->
+    <div id="test-area" class="test-area" style="display: none;">
+      <div id="sentences-container"></div>
+      <div class="results">
+        <p>Time Left: <span id="time-left">0</span> seconds</p>
+        <p>Words Per Minute: <span id="wpm">0</span></p>
+        <p>Accuracy: <span id="accuracy">0</span>%</p>
+      </div>
+    </div>
+  </div>
 
   <script type="module" src="script.js"></script>
   <script type="module" src="textSamples.js"></script>

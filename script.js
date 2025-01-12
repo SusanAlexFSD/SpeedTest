@@ -83,27 +83,34 @@ function handleTyping(event, sentenceIndex, sentence) {
         `.sentence-container .sentence[data-index="${sentenceIndex}"]`
     );
 
-    // Reset all word highlights first
+    // Reset all word colors
     const wordElements = sentenceElement.querySelectorAll('.word');
     wordElements.forEach((wordElement) => {
-        wordElement.classList.remove('highlight');
+        wordElement.style.color = ''; // Reset text color to default
     });
 
-    // Check the index of the word the user is typing
-    const currentWordIndex = typedWords.length - 1;
+    // Highlight the current word based on typed words
+    const currentWordIndex = typedWords.length - 1; // Index of the current word being typed
 
-    // Ensure the current word index is within the bounds of the sentence
     if (currentWordIndex < words.length) {
         const wordElement = wordElements[currentWordIndex];
-        wordElement.classList.add('highlight');
+
+        // Change the color of the current word to blue
+        wordElement.style.color = '#0077b6'; // Blue color
     }
 
-    // Check if the user pressed the space bar (to indicate completion of a word)
-    if (event.key === ' ' && typedWords[currentWordIndex] === words[currentWordIndex]) {
-        // If the word is typed correctly, move the highlight to the next word
-        if (currentWordIndex + 1 < words.length) {
-            const nextWordElement = wordElements[currentWordIndex + 1];
-            nextWordElement.classList.add('highlight');
+    // Check if the typed word matches the current word
+    if (typedWords.length > 0) {
+        const typedWord = typedWords[typedWords.length - 1];
+        const currentWord = words[typedWords.length - 1];
+
+        // Only move to the next word when the user presses space and the word is correct
+        if (typedWord === currentWord && event.key === ' ') {
+            // If the word is typed correctly, move to the next word
+            const nextWordElement = wordElements[typedWords.length];
+            if (nextWordElement) {
+                nextWordElement.style.color = '#0077b6'; // Change the color of the next word to blue
+            }
         }
     }
 
@@ -120,7 +127,6 @@ function handleTyping(event, sentenceIndex, sentence) {
         }
     }
 }
-
 
 
 

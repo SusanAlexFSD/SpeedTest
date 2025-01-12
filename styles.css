@@ -1,17 +1,32 @@
-body {
+  /* General page styling */
+  body {
+    background-color: #ffcccb; /* Pastel pink background */
     font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items at the top */
+    height: 100vh;
   }
   
   .container {
-    max-width: 800px;
-    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+    max-width: 1200px; /* Set a max width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all content */
   }
   
   h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #333;
+  }
+
+  .top-section {
+    margin-bottom: 30px; /* Add space between the top section and the typing test */
   }
   
   .dropdowns {
@@ -41,17 +56,86 @@ body {
     margin-top: 20px;
   }
   
-  button {
-    font-size: 18px;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-  }
+
   
+  /* Style for the typing test area */
   #test-area {
-    margin-top: 30px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ccc; /* Light grey border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
+  #sentences-container {
+    margin-top: 20px;
+  }
+  
+  .sentence-container {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .sentence {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  
+  .word {
+    display: inline-block;
+    padding: 0 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .word.highlight {
+    background-color: #90e0ef; /* Pastel blue highlight */
+  }
+  
+  /* Styling for the results section */
+  .results {
+    margin-top: 20px;
+  }
+  
+  .results p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+  }
+  
+  /* Dropdowns and buttons styling */
+  .dropdowns,
+  .buttons {
+    margin-bottom: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #0096c7;
+  }
+  
+  .test-area {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure it takes up full width of the container */
+    max-width: 800px; /* Set a max width to avoid it being too wide */
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    flex-direction: column;
+  }
+
   #text-to-type {
     font-size: 18px;
     margin-bottom: 20px;
@@ -66,26 +150,66 @@ body {
     box-sizing: border-box;
   }
 
-  .highlight {
-    background-color: yellow;
-    font-weight: bold;
+  
+  #sentences-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;  /* Stack the sentences vertically */
+    align-items: center;     /* Center sentences within the container */
   }
   
   .sentence-container {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;  /* Center individual sentence container */
+  }
+
+  .sentence {
+    color: #B0B0B0; /* Light grey color for the text */
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+
+/* Style for the typing input line (without a border) */
+.typing-input {
+    border: none; /* Remove border */
+    border-bottom: 2px solid #B0B0B0; /* Light grey line under the text input */
+    width: 100%; /* Ensure it stretches the full width of the container */
+    font-size: 1.2rem;
+    padding: 5px 0;
+    margin-top: 5px;
+    outline: none; /* Remove outline on focus */
+    text-align: left; /* Align text to the left so the cursor starts at the left */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    color: #B0B0B0; /* Light grey text color */
   }
   
-  .typing-input {
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
-    font-size: 16px;
+  /* Change the focus border color on the typing input */
+  .typing-input:focus {
+    border-bottom-color: #0096c7; /* Change line color on focus */
   }
   
+  
+  .word {
+    display: inline-block;
+    padding: 0 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .word.highlight {
+    color: #90e0ef; /* Pastel blue highlight */
+  }
  
   
+  .results {
+    margin-top: 20px;
+  }
+  
   .results p {
-    font-size: 18px;
-    margin: 10px 0;
+    font-size: 1.1rem;
+    margin: 5px 0;
   }
   
