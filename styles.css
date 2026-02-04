@@ -213,3 +213,49 @@
     margin: 5px 0;
   }
   
+
+
+  /* Style the mode selector and buttons */
+.mode-selector {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-bottom: 20px; /* Space below the mode selector */
+  }
+  
+  .mode-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #0077b6;
+    border-radius: 5px;
+    color: #0077b6;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .mode-button:hover {
+    background-color: #0077b6;
+    color: white;
+  }
+  
+  .mode-button.active {
+    background-color: yellow;
+    color: #333;
+    border-color: yellow;
+  }
+  
+  /* Additional styles for different modes */
+  .normal .sentence {
+    font-size: 16px;
+  }
+  
+  .pro .sentence {
+    font-size: 20px;
+  }
+  
+  .phone-mode .sentence {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
